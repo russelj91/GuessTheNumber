@@ -16,7 +16,7 @@ document.querySelector(".check").addEventListener("click", function () {
     displayMessage("You Got The Right Number");
     document.querySelector(".number").textContent = secretNumber;
     document.querySelector(".topscore").textContent = score;
-    document.querySelector("body").style.backgroundColor = "green";
+    document.querySelector("body").style.backgroundColor = "#90EE90";
 
     if (score > highscore) {
       highscore = score;
