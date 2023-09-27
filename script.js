@@ -8,11 +8,14 @@
 const secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 10;
 let highscore = 0;
+const displayMessage = function (message) {
+  document.querySelector(".message").textContent = message;
+};
 
 document.querySelector(".check").addEventListener("click", function () {
   const guess = Number(document.querySelector(".guess").value);
   if (!guess) {
-    document.querySelector(".message").textContent = "Invalid Number!";
+    displayMessage("No Number!");
   } else if (guess === secretNumber) {
     document.querySelector(".message").textContent =
       " You Got The Right Number";
