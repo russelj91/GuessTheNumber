@@ -23,8 +23,9 @@ document.querySelector(".check").addEventListener("click", function () {
       document.querySelector(".topscore").textContent = highscore;
     }
   } else if (guess !== secretNumber) {
-    document.querySelector(".message").textContent =
-      guess > secretNumber ? "Number Too High!" : "Number Too Low!";
+    displayMessage(
+      guess > secretNumber ? "Number Too High!" : "Number Too Low!"
+    );
     if (score > 1) {
       score--;
       document.querySelector(".score").textContent = score;
