@@ -6,22 +6,7 @@ const displayMessage = function (message) {
 
 let score = 10;
 let highscore = 0;
-let secretNumber;
-
-document.querySelector(".reset").addEventListener("click", function () {
-  score = 10;
-
-  displayMessage("Guess The Number!");
-  document.querySelector(".number").textContent = "?";
-
-  document.querySelector(".score").textContent = score;
-  document.querySelector(".guess").value = "";
-
-  document.querySelector("body").style.backgroundColor = "#222";
-
-  // Generate a new secretNumber when resetting the game
-  secretNumber = Math.trunc(Math.random() * 20) + 1;
-});
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 
 document.querySelector(".check").addEventListener("click", function () {
   const guess = Number(document.querySelector(".guess").value);
@@ -51,5 +36,17 @@ document.querySelector(".check").addEventListener("click", function () {
   }
 });
 
-// Generate the initial secretNumber when the page loads
-secretNumber = Math.trunc(Math.random() * 20) + 1;
+document.querySelector(".reset").addEventListener("click", function () {
+  score = 10;
+
+  displayMessage("Guess The Number!");
+  document.querySelector(".number").textContent = "?";
+
+  document.querySelector(".score").textContent = score;
+  document.querySelector(".guess").value = "";
+
+  document.querySelector("body").style.backgroundColor = "#222";
+
+  // Generate a new secretNumber when resetting the game
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+});
